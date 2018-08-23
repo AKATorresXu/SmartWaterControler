@@ -1,0 +1,48 @@
+.Login{
+    width: 300px;
+    height:500px;
+    border: 3px solid deepskyblue;
+    position: relative;
+    left: 500px;
+    background-image:url(water_看图王.jpg);
+}
+input.active{
+    color: black;
+    border: 2px solid darkblue;
+}
+input[type="text"]{
+    width: 294px;
+    height: 30px;
+    color: #999988;
+}
+#orderNum{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top:100px;
+}
+#Phonenumber{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top:130px;
+}
+#choice{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: 160px;
+    left: 90px;
+}
+#but{
+    display: block;
+    position: relative;
+    top: 230px;
+    margin: 0 auto;
+    height: 30px;
+    width: 294px;
+}
+label.hint,input[type="radio"]
+{
+
+}

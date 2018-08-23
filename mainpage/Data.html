@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示界面</title>
+    <link type="text/css" rel="stylesheet" href="Data.css">
+<style type="text/css">
+    .circle {
+        width: 144px;
+        height: 144px;
+        position: absolute;
+        border-radius: 50%;
+        background: #0cc;
+    }
+    .pie_left, .pie_right {
+        width: 144px;
+        height: 144px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .left, .right {
+        display: block;
+        width:144px;
+        height:144px;
+        background:#00aacc;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+    .pie_right, .right {
+        clip:rect(0,auto,auto,72px);
+    }
+    .pie_left, .left {
+        clip:rect(0,72px,auto,0);
+    }
+    .mask {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        left: 21px;
+        top: 21px;
+        background: #FFF;
+        position: absolute;
+        text-align: center;
+        line-height: 100px;
+        font-size: 14px;
+        color:blue;
+    }
+</style>
+    <script type="text/javascript" src="jscharts.js"></script>
+    <script type="text/javascript" src="jQuery.js"></script>
+</head>
+<body>
+<div class="Content">
+    <div class="now water">
+        <div class="waterYield">
+            <div class="circle">
+                <div class="pie_left"><div class="left"></div></div>
+                <div class="pie_right"><div class="right"></div></div>
+                <div class="mask"><span style="color: blue">20</span>%</div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#return').click(function () {
+                    window.location.href = "test.html";
+                    return false;
+                })
+            });
+            $(function() {
+                $('.circle').each(function(index, el) {
+                    var num = $(this).find('span').text() * 3.6;
+                    if (num<=180) {
+                        $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+                    }
+                    else {
+                        $(this).find('.right').css('transform', "rotate(180deg)");
+                        $(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+                    };
+                });
+            });
+        </script>
+        <div class="waterPrice">
+        当前水价：XXX
+        </div>
+    </div>
+    <div class="historyWater">
+        <h3>历史用水量</h3>
+        上一月:<br>
+        前一天:<br>
+        上小时：<br>
+    </div>
+    <div class="TDS"><div class="text">TDS:XXX</div></div>
+    <div id="graph">
+    Loading  graph。。。
+    </div>
+    <script type="text/javascript">
+        var myData = new Array([1996, 22], [1997, 36], [1998, 37], [1999, 45], [2000, 50], [2001, 55], [2002, 61], [2003, 61], [2004, 62], [2005, 66], [2006, 73]);
+        var myChart = new JSChart('graph', 'line');
+        myChart.setDataArray(myData);
+        myChart.setTitle('本日用水分析');
+        myChart.setTitleColor('#ffffff');
+        myChart.setTitleFontSize(5);
+        myChart.setAxisNameX('');
+        myChart.setAxisNameY('');
+        myChart.setAxisColor('#ffffff');
+        myChart.setAxisValuesColor('#ffffff');
+        myChart.setAxisPaddingLeft(20);
+        myChart.setAxisPaddingRight(15);
+        myChart.setAxisPaddingTop(15);
+        myChart.setAxisPaddingBottom(15);
+        myChart.setAxisValuesNumberX(6);
+        myChart.setGraphExtend(true);
+        myChart.setGridColor('#c2c2c2');
+        myChart.setLineWidth(3);
+        myChart.setLineColor('#9F0505');
+        myChart.setSize(300, 150);
+        myChart.draw();
+    </script>
+    <div class="footer">
+        <button type="button" id="return"></button>
+        <div class="waringlight"></div>
+        <button type="button" id="set" ></button>
+    </div>
+</div>
+</body>
+</html>

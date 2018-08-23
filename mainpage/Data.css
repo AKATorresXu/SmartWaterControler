@@ -1,0 +1,90 @@
+*{
+    padding: 0px;
+    margin: 0px;
+	color:white;
+}
+.Content{
+    width: 300px;
+    height: 500px;
+    background: white;
+    background-image: url(5.jpg);
+    left: 34%;
+    top:0%;
+    position: absolute;
+}
+.waterYield{
+	color:blue;
+}
+.now.water{
+    width: 294px;
+    height: 144px;
+}
+.historyWater{
+    width: 294px;
+    height: 94px;
+}
+.TDS{
+    width: 294px;
+    height: 44px;
+    position: relative;
+}
+.TDS .text{
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    top:50%;
+    transform: translate(0, -50%);
+}
+.graph{
+    border: 3px solid black;
+}
+.footer{
+    position: absolute;
+    bottom: 0px;
+    width: 294px;
+    height:44px;
+}
+.waterYield{
+    width: 150px;
+    height: 144px;
+    float: left;
+}
+.waterPrice{
+    float: left;
+}
+#return{
+    display: block;
+   float: left;
+    width: 44px;
+    height: 44px;
+    left: 0px;
+    top:0px;
+    background-image: url(退出.png);
+    background-color: transparent;
+    border-color: transparent;
+    background-repeat: no-repeat;
+}
+img{ vertical-align:middle;}
+.waringlight{
+    float: left;
+    margin: 0px 75px;
+    background-image: url(绿灯最后版.png);
+
+    width: 44px;
+    height: 44px;
+}
+#set{
+    display: block;
+    right:5px;
+    width: 53px;
+    height: 44px;
+    position: absolute;
+    top: 0px;
+
+    background-image: url(设置.png);
+    background-color: transparent;
+    border-color: transparent;
+    background-repeat: no-repeat;
+
+
+}
